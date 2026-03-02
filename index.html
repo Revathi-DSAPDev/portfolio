@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revathi S | AI FinTech Developer & Quantitative Analyst</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <span class="loader-text">LOADING</span>
+        </div>
+    </div>
+
+    <!-- 3D Canvas Container -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Cursor Follower -->
+    <div class="cursor-follower"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">RS</span>
+            <span class="logo-dot"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-greeting">
+                    <span class="line"></span>
+                    <span class="greeting-text">Hello, I'm</span>
+                </div>
+                <h1 class="hero-name">
+                    <span class="name-letter" data-letter="R">R</span>
+                    <span class="name-letter" data-letter="E">E</span>
+                    <span class="name-letter" data-letter="V">V</span>
+                    <span class="name-letter" data-letter="A">A</span>
+                    <span class="name-letter" data-letter="T">T</span>
+                    <span class="name-letter" data-letter="H">H</span>
+                    <span class="name-letter" data-letter="I">I</span>
+                    <span class="name-space"> </span>
+                    <span class="name-letter" data-letter="S">S</span>
+                </h1>
+                <div class="hero-titles">
+                    <span class="title-item active">AI FinTech Developer</span>
+                    <span class="title-item">Quantitative Analyst</span>
+                    <span class="title-item">Full Stack Developer</span>
+                </div>
+                <p class="hero-description">
+                    Building exotic options pricing engines, enterprise ML forecasting systems, 
+                    and scalable platforms with Python, Django, and React.js
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View Projects</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="95">0</span>
+                        <span class="stat-unit">%</span>
+                        <span class="stat-label">ML Accuracy</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="20">0</span>
+                        <span class="stat-unit">%</span>
+                        <span class="stat-label">Cost Reduction</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="40">0</span>
+                        <span class="stat-unit">%</span>
+                        <span class="stat-label">Faster Retrieval</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-3d-container">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+        <div class="hero-bg-elements">
+            <div class="grid-lines"></div>
+            <div class="floating-particles" id="particles"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Crafting Financial <span class="highlight">Intelligence</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="frame-border"></div>
+                        <div class="image-placeholder">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="image-decoration">
+                            <span class="deco-line"></span>
+                            <span class="deco-dot"></span>
+                        </div>
+                    </div>
+                    <div class="about-badges">
+                        <div class="badge">
+                            <i class="fas fa-brain"></i>
+                            <span>AI/ML Expert</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Quant Analyst</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="about-intro">
+                        I'm an <strong>AI FinTech Developer</strong> and <strong>Quantitative Analyst</strong> 
+                        with expertise in derivatives pricing, machine learning pipeline engineering, 
+                        and full stack web development.
+                    </p>
+                    <p>
+                        I build exotic options pricing engines using Black-Scholes and Monte Carlo simulations, 
+                        enterprise ML forecasting systems with ARIMA, XGBoost, and LLM fine-tuning, 
+                        and scalable platforms in Python, Django, and React.js.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <h4>Education</h4>
+                                <p>MBA Finance | B.Sc. Mathematics</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <h4>Certifications</h4>
+                                <p>SAP FICO | Data Science | IBM Python</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <h4>Location</h4>
+                                <p>Chennai, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Let's Connect</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Expertise</span>
+                <h2 class="section-title">Technical <span class="highlight">Arsenal</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Languages & Frameworks</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="95"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript (ES6+)</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Django / FastAPI</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">React.js</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">ML / Deep Learning</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="92"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">LLM Fine-Tuning / NLP</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Time-Series Forecasting</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Scikit-learn / XGBoost</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-candlestick"></i>
+                    </div>
+                    <h3>Quantitative Finance</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Black-Scholes Pricing</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Monte Carlo Simulation</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Exotic Derivatives</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Options Greeks</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="92"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data & Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">PostgreSQL / MySQL</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Power BI / Tableau</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SAP FICO</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git / GitHub</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-orbit">
+                <div class="orbit-center">
+                    <span>TECH</span>
+                </div>
+                <div class="orbit-ring orbit-1">
+                    <div class="orbit-item"><i class="fab fa-python"></i></div>
+                    <div class="orbit-item"><i class="fab fa-react"></i></div>
+                    <div class="orbit-item"><i class="fab fa-js-square"></i></div>
+                </div>
+                <div class="orbit-ring orbit-2">
+                    <div class="orbit-item"><i class="fas fa-brain"></i></div>
+                    <div class="orbit-item"><i class="fas fa-chart-line"></i></div>
+                    <div class="orbit-item"><i class="fas fa-database"></i></div>
+                    <div class="orbit-item"><i class="fab fa-git-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Journey</span>
+                <h2 class="section-title">Professional <span class="highlight">Experience</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Jun 2025 - Present</span>
+                        </div>
+                        <h3 class="timeline-title">Python Full Stack Developer Intern</h3>
+                        <h4 class="timeline-company">
+                            <i class="fas fa-building"></i>
+                            Inmakes Infotech, Kochi (Remote)
+                        </h4>
+                        <ul class="timeline-details">
+                            <li>Engineered RESTful APIs using Django serializers and URL routing consumed by React.js frontend; optimized PostgreSQL queries reducing response time by <strong>35%</strong></li>
+                            <li>Architected <strong>Inmakes Learning Hub</strong>, a six-page React.js SPA with protected routing, JWT session management, and Tailwind CSS responsive layout</li>
+                            <li>Delivered mobile-first accessible interfaces supporting end-to-end testing and CI deployment workflows</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Django</span>
+                            <span>React.js</span>
+                            <span>PostgreSQL</span>
+                            <span>JWT</span>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Jan 2023 - Oct 2024</span>
+                        </div>
+                        <h3 class="timeline-title">Data Scientist & ML Engineer Intern</h3>
+                        <h4 class="timeline-company">
+                            <i class="fas fa-building"></i>
+                            360DigiTMG, Bangalore (Remote)
+                        </h4>
+                        <ul class="timeline-details">
+                            <li>Built ARIMA, XGBoost, and Random Forest forecasting models achieving <strong>95% prediction accuracy</strong> on spice commodity prices</li>
+                            <li>Constructed Power BI executive dashboards eliminating <strong>30% of manual reporting time</strong> across 5 departments</li>
+                            <li>Deployed LLM-driven inventory intelligence module: <strong>40% faster data retrieval</strong>, 95% query accuracy</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>ARIMA</span>
+                            <span>XGBoost</span>
+                            <span>Power BI</span>
+                            <span>LLM</span>
+                            <span>NLP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="education-section">
+                <h3 class="subsection-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </h3>
+                <div class="education-cards">
+                    <div class="edu-card" data-aos="zoom-in">
+                        <div class="edu-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h4>MBA, Finance</h4>
+                        <p>P.K.R. College, Gobi</p>
+                        <span class="edu-grade">CGPA: 7.4/10 | 2018</span>
+                    </div>
+                    <div class="edu-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="edu-icon">
+                            <i class="fas fa-square-root-alt"></i>
+                        </div>
+                        <h4>B.Sc., Mathematics</h4>
+                        <p>V.V.V. College, Virudhunagar</p>
+                        <span class="edu-grade">CGPA: 8.2/10 | 2016</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card featured" data-aos="fade-up">
+                    <div class="project-visual">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <div class="project-3d-bg">
+                            <div class="cube">
+                                <div class="face front"></div>
+                                <div class="face back"></div>
+                                <div class="face right"></div>
+                                <div class="face left"></div>
+                                <div class="face top"></div>
+                                <div class="face bottom"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tag">Quantitative Finance</div>
+                        <h3>Greeks Gym</h3>
+                        <p class="project-subtitle">Interactive Options Analytics Platform</p>
+                        <p class="project-description">
+                            Real-time Black-Scholes Greeks engine (Delta, Gamma, Theta, Vega, Rho), 
+                            interactive 3D sensitivity surfaces, and multi-leg strategy P&L builder 
+                            serving 100+ simulated trading scenarios.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Black-Scholes</span>
+                            <span>Streamlit</span>
+                            <span>Plotly</span>
+                            <span>NumPy</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar"></i> Jan 2025</span>
+                        <span><i class="fas fa-building"></i> ZeTheta Algorithms</span>
+                    </div>
+                </div>
+                <div class="project-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-visual">
+                        <div class="project-icon">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <div class="project-3d-bg">
+                            <div class="pyramid">
+                                <div class="pyramid-face"></div>
+                                <div class="pyramid-face"></div>
+                                <div class="pyramid-face"></div>
+                                <div class="pyramid-face"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tag">Derivatives Pricing</div>
+                        <h3>Skew Sculptor Studio</h3>
+                        <p class="project-subtitle">Exotic Derivatives Pricing Engine</p>
+                        <p class="project-description">
+                            Modular pricing platform for Asian, Lookback, and Barrier options via 
+                            Monte Carlo simulation with 10,000+ path generation. Includes Delta/Vega 
+                            computation via finite difference and production FastAPI REST interface.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Monte Carlo</span>
+                            <span>FastAPI</span>
+                            <span>NumPy</span>
+                            <span>Uvicorn</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>API Docs</span>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar"></i> 2025</span>
+                        <span><i class="fas fa-building"></i> ZeTheta Algorithms</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Achievements</span>
+                <h2 class="section-title">Certifications & <span class="highlight">Credentials</span></h2>
+            </div>
+            <div class="cert-carousel">
+                <div class="cert-card" data-aos="flip-left">
+                    <div class="cert-badge">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>Data Labeling Job Simulation</h4>
+                    <p class="cert-issuer">Forage</p>
+                    <p class="cert-date">Jan 2026</p>
+                    <div class="cert-skills">
+                        <span>Batch Labeling</span>
+                        <span>PII Awareness</span>
+                        <span>Quality Control</span>
+                    </div>
+                </div>
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="cert-badge">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>Data Science Certificate</h4>
+                    <p class="cert-issuer">360DigiTMG</p>
+                    <p class="cert-date">2024</p>
+                    <div class="cert-skills">
+                        <span>CRISP-ML(Q)</span>
+                        <span>EDA</span>
+                        <span>ML/NLP</span>
+                    </div>
+                </div>
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="cert-badge sap">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4>SAP FICO & S/4HANA Finance</h4>
+                    <p class="cert-issuer">SAP</p>
+                    <p class="cert-date">Feb 2025</p>
+                    <div class="cert-skills">
+                        <span>General Ledger</span>
+                        <span>AP/AR</span>
+                        <span>Asset Accounting</span>
+                    </div>
+                </div>
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="cert-badge ibm">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h4>Python for Data Science</h4>
+                    <p class="cert-issuer">IBM</p>
+                    <p class="cert-date">2025</p>
+                    <div class="cert-skills">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Data Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-intro">
+                        I'm currently open to new opportunities and collaborations. 
+                        Whether you have a project in mind or just want to say hello, 
+                        feel free to reach out!
+                    </p>
+                    <div class="contact-methods">
+                        <a href="mailto:post2revathi@gmail.com" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <span class="method-label">Email</span>
+                                <span class="method-value">post2revathi@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+918270820738" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <span class="method-label">Phone</span>
+                                <span class="method-value">+91 82708 20738</span>
+                            </div>
+                        </a>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <span class="method-label">Location</span>
+                                <span class="method-value">Chennai, Tamil Nadu, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:post2revathi@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Subject</label>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                        <span class="focus-border"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">RS</span>
+                <span class="logo-dot"></span>
+            </div>
+            <p class="footer-tagline">Building the future of FinTech, one algorithm at a time.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2025 Revathi S. All rights reserved.
+            </p>
+        </div>
+        <div class="footer-decoration">
+            <div class="deco-line"></div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
