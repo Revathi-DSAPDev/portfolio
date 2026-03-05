@@ -447,31 +447,53 @@ function initSkillBars() {
 // ====================================
 function initContactForm() {
     const form = document.getElementById('contactForm');
-    
+
     if (!form) return;
 
-    
+    const EMAILJS_PUBLIC_KEY  = 'RGPAwV1llmsdjpp6q';
+    const EMAILJS_SERVICE_ID  = 'service_eekakan';
+    const EMAILJS_TEMPLATE_ID = 'f834ijw';
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
-        // Show success message
+
         const btn = form.querySelector('.btn-submit');
-        const originalText = btn.innerHTML;
-        
-        btn.innerHTML = '<span>Message Sent!</span> <i class="fas fa-check"></i>';
-        btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-        
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '';
-            form.reset();
-        }, 3000);
-        
-        // Here you would typically send the data to a server
-        console.log('Form submitted:', data);
+        const originalHTML = btn.innerHTML;
+
+        btn.innerHTML = '<span>Sending…</span> <i class="fas fa-spinner fa-spin"></i>';
+        btn.disabled = true;
+
+        const templateParams = {
+            from_name:  form.name.value.trim(),
+            from_email: form.email.value.trim(),
+            subject:    form.subject.value.trim(),
+            message:    form.message.value.trim(),
+            reply_to:   form.email.value.trim()
+        };
+
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+            .then(() => {
+                btn.innerHTML = '<span>Message Sent!</span> <i class="fas fa-check"></i>';
+                btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                form.reset();
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 4000);
+            })
+            .catch((error) => {
+                console.error('EmailJS error:', error);
+                btn.innerHTML = '<span>Failed – Try Again</span> <i class="fas fa-times"></i>';
+                btn.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 4000);
+            });
     });
 }
 
