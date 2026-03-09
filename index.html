@@ -657,32 +657,33 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Your Name</label>
-                        <span class="focus-border"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">Your Email</label>
-                        <span class="focus-border"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" required>
-                        <label for="subject">Subject</label>
-                        <span class="focus-border"></span>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                        <label for="message">Your Message</label>
-                        <span class="focus-border"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
+               <form class="contact-form" id="contactForm">
+                   <input type="hidden" name="access_key" value="9c8d8391-7316-4f74-a2b5-83aeb7d50ab3" />
+                   <div class="form-group">
+                      <input type="text" id="name" name="name" required>
+                      <label for="name">Your Name</label>
+                      <span class="focus-border"></span>
+                   </div>
+                   <div class="form-group">
+                      <input type="email" id="email" name="email" required>
+                      <label for="email">Your Email</label>
+                      <span class="focus-border"></span>
+                   </div>
+                   <div class="form-group">
+                      <input type="text" id="subject" name="subject" required>
+                      <label for="subject">Subject</label>
+                      <span class="focus-border"></span>
+                   </div>
+                   <div class="form-group">
+                      <textarea id="message" name="message" rows="5" required></textarea>
+                      <label for="message">Your Message</label>
+                      <span class="focus-border"></span>
+                   </div>
+                   <button type="submit" class="btn btn-primary btn-submit">
+                      <span>Send Message</span>
+                      <i class="fas fa-paper-plane"></i>
+                   </button>
+              </form>
             </div>
         </div>
     </section>
@@ -711,7 +712,40 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    
     <script src="script.js"></script>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        const btnText = btn.querySelector('span');
+        btnText.textContent = 'Sending...';
+        btn.disabled = true;
+
+        const data = new FormData(this);
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data
+        });
+        const json = await res.json();
+
+        if (json.success) {
+          btnText.textContent = '✅ Message Sent!';
+          btn.style.background = '#00c851';
+          this.reset();
+          setTimeout(() => {
+            btnText.textContent = 'Send Message';
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 3000);
+        } else {
+          btnText.textContent = '❌ Failed. Try Again';
+          btn.style.background = '#ff4444';
+          btn.disabled = false;
+        }
+      });
+    </script>
+
 </body>
 </html>
